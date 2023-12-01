@@ -86,6 +86,7 @@ Autenticação no Header da requisição:
 | Status Code | Route                                                       | Response Message             |
 |-------------|-------------------------------------------------------------|------------------------------|
 | 400         | POST http://18.231.15.236:3000/api/singUp                  | bad request                  |
+| 400         | POST http://18.231.15.236:3000/api/singUp                  | E-mail já existente           |
 | 400         | POST http://18.231.15.236:3000/api/singIn                  | bad request                  |
 | 401         | POST http://18.231.15.236:3000/api/singIn                  | Usuário e/ou senha inválidos |
 | 401         | GET http://18.231.15.236:3000/api/getUser/userID=user-id | Sessão inválida              |
