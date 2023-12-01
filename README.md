@@ -60,7 +60,7 @@ POST http://18.231.15.236:3000/api/singIn
 ```
 GET http://18.231.15.236:3000/api/getUser/userID=<user-id>
 ```
-- Autenticação no Header da requisição
+Autenticação no Header da requisição
 
 ```
  "Authentication": "Bearer {token}"
