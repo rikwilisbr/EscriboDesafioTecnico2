@@ -8,16 +8,21 @@ class AuthController {
   // register/singUp method
   async singUp (req, res) {
     try {
+      if (!req.body.senha || !req.body.telefones || !req.body.email || !req.body.nome) {
+        return res.status(400).json({
+          mensagem: 'bad request'
+        })
+      }
       const hashedPassword = await bcrypt.hash(req.body.senha, 10)
 
       const newUser = new User({
         nome: req.body.nome?.trim(),
         email: req.body.email?.trim(),
         telefones: req.body?.telefones,
-        senha: hashedPassword
+        senha: req.body.senha ? hashedPassword : null
       })
 
-      if (newUser.nome && newUser.email && newUser.telefones && newUser.senha) {
+      if (newUser.nome && newUser.email && newUser.telefones && newUser.senha !== null) {
         const result = await User.create(newUser)
 
         const id = result.id
