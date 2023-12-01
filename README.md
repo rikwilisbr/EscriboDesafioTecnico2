@@ -64,7 +64,6 @@ Autenticação no Header da requisição
 
 ```
  "Authentication": "Bearer {token}"
-
 ```
 
 - Output 200
