@@ -4,7 +4,6 @@ require('dotenv').config()
 const signJwt = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1800s' })
 
 const expiredSignJwt = (id) => {
-  // Set the expiration time to a past date (e.g., 1 second ago)
   const pastDate = new Date()
   pastDate.setSeconds(pastDate.getSeconds() - 1)
 
